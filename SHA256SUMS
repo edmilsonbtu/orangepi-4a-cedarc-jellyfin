@@ -1,7 +1,7 @@
 403b81128f4a0d36e96b9fc6d42e4bbe592e93b0d862b4cc1578fa5c4cd59a62  src/controller/cedar-process-control-v5.4.py
 eb0581f4baa791ca7e8da52a87e6cc94a371df48a6338831636fb5c439556ab2  src/feeder/cedar-feed-ass-v5.4.py
 f4567f61d654acf96d923e2ab3b6fcd8cde1b5b57ec346c33970482bb554ce3d  src/jellyfin/cedar-adapter-v6.0.8.py
-9f87472b62c2ccfe941cc68f0e6f4c3c4c630c3135c71053cb4844094388c463  src/jellyfin/cedar-jellyfin-selector.py
+6a23fab1e69e4bc2144cd436f3ff796e29e619291e47c6d7724aa1b495576dbd  src/jellyfin/cedar-jellyfin-selector.py
 c54edc3993d45b275791db75a4d878a6edbe3fef9999f2ab69933d92d700ec58  src/jellyfin/ffmpeg-wrapper
 2891cca28fe0f0c0c285763eeb2d336776d98b87493d606c57fc07d5dcf98aee  src/legacy/cedar-adapter-fmp4-v5.4.py
 121a44d63404798f88e5eef14f2ef0b20671c0db38b247d75f326cc9bb319748  src/legacy/cedar-adapter.py

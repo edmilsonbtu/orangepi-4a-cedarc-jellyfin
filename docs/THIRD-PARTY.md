@@ -2,12 +2,11 @@
 
 ## Project code
 
-The project proposes the MIT license for original integration code
-authored during its development.
+All source files in this repository were developed originally for this
+project, with AI assistance, as confirmed by the project author.
 
-The provenance of all included source files must be confirmed before
-public redistribution. The LICENSE file does not override third-party
-copyrights or licenses.
+The original project code is distributed under the MIT license.
+Third-party dependencies retain their respective licenses.
 
 ## Allwinner CedarC
 
@@ -41,6 +40,7 @@ The project is not an official Allwinner, Jellyfin, or AurealNix release.
 
 ## Publication status
 
-Third-party source provenance review: PENDING.
+Project source provenance: confirmed by the author.
 
-Do not publish the repository publicly until this review is completed.
+External dependencies are not redistributed. Users are responsible
+for obtaining compatible dependencies under their applicable licenses.

@@ -61,7 +61,14 @@ done
 
 echo
 echo "===== PYTHON / PYAV ====="
-/opt/cedar-native/venv/bin/python - <<'PY'
+CEDAR_PYTHON="${CEDAR_PYTHON:-/opt/cedar-native/venv/bin/python}"
+
+if [[ ! -x "$CEDAR_PYTHON" ]]; then
+    echo "ERRO: interpretador Python indisponivel: $CEDAR_PYTHON"
+    exit 1
+fi
+
+"$CEDAR_PYTHON" - <<'PY'
 import sys
 import av
 print("Python:", sys.version.split()[0])

@@ -59,6 +59,8 @@ https://github.com/ut-slayer/orangepi-4a-mainline
 
 ## License
 
-License and third-party code provenance review pending.
-Do not assume that all components are available for redistribution
-under a single license.
+Original project code: MIT License.
+
+All included source files were developed for this project with AI
+assistance. External dependencies retain their respective licenses.
+See docs/THIRD-PARTY.md.
