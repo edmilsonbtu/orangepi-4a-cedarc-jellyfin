@@ -52,3 +52,23 @@ The production Jellyfin service was not modified.
 - Jellyfin HLS integration
 - Fresh-system installation
 - Legacy feeder dependency resolution
+
+
+## Controlled SIGTERM cancellation
+
+Input:
+- File: karate-kid2-hevc-5min.mkv
+- Codec: HEVC
+- Resolution: 1920x1080
+- Frame rate: 24000/1001
+
+Results:
+- CedarC decoder initialized successfully
+- CedarC encoder initialized successfully
+- Encoding was active before cancellation
+- Controller received SIGTERM
+- Controller reported CEDAR_CONTROL_STOP=SIGTERM
+- Controller return code: 143
+- No matching residual processes observed
+
+Status: PASS

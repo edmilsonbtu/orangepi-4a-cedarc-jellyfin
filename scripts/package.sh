@@ -6,6 +6,13 @@ DEST="$ROOT/dist/opt/cedar-native"
 
 echo "===== PREPARANDO DISTRIBUICAO ====="
 
+if [[ "$DEST" != "$ROOT/dist/opt/cedar-native" || -L "$ROOT/dist" || -L "$ROOT/dist/opt" || -L "$DEST" ]]; then
+    echo "ERRO: diretorio de distribuicao inseguro"
+    exit 1
+fi
+
+rm -rf -- "$DEST"
+
 mkdir -p \
   "$DEST/v6.0" \
   "$DEST/beta54" \
@@ -20,16 +27,8 @@ install -m 755 \
   "$DEST/v6.0/"
 
 install -m 755 \
-  "$ROOT/src/legacy/cedar-adapter-v6.0.7.1.py" \
-  "$DEST/v6.0/"
-
-install -m 755 \
   "$ROOT/src/legacy/cedar-adapter-fmp4-v5.4.py" \
   "$DEST/beta54/"
-
-install -m 755 \
-  "$ROOT/src/legacy/cedar-adapter.py" \
-  "$DEST/jellyfin-test/"
 
 install -m 755 \
   "$ROOT/src/controller/cedar-process-control-v5.4.py" \
@@ -48,10 +47,6 @@ install -m 755 \
   "$DEST/beta54/cedar-mux-ass-v5.4"
 
 echo
-install -m 755 \
-  "$ROOT/src/legacy/cedar-process-control.py" \
-  "$DEST/jellyfin-test/"
-
 python3 "$ROOT/scripts/relocate.py"
 
 echo

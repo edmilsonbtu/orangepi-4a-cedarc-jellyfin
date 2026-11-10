@@ -33,7 +33,16 @@ done
     exit 1
 }
 
-PREFIX="${PREFIX%/}"
+PREFIX="$(realpath -m -- "$PREFIX")"
+
+case "$PREFIX" in
+    /opt/cedar-native-preview)
+        ;;
+    *)
+        echo "ERRO: a preview somente pode ser instalada em /opt/cedar-native-preview"
+        exit 1
+        ;;
+esac
 
 case "$PREFIX" in
     ""|/|/opt|/opt/cedar-native|/opt/cedar-native/*)
