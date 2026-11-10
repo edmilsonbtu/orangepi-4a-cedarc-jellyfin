@@ -64,3 +64,27 @@ Original project code: MIT License.
 All included source files were developed for this project with AI
 assistance. External dependencies retain their respective licenses.
 See docs/THIRD-PARTY.md.
+
+## Reference operating system — AurealNix
+
+Development and hardware validation were performed on the
+AurealNix Debian 13 CLI v0.5 image for the Orange Pi 4A.
+
+- Project: [Orange Pi 4A Mainline Linux](https://github.com/ut-slayer/orangepi-4a-mainline)
+- Maintainer: Juan Manuel López Carrillo (AurealNix)
+- Hardware: Orange Pi 4A / Allwinner T527
+- Reference kernel: Linux 6.18.55
+- Distribution: Debian 13 (Trixie)
+
+The AurealNix project provides the Linux kernel integration,
+device-tree configuration and CedarC VPU driver support used
+in the reference test environment.
+
+This repository provides a separate, independently developed
+CedarC transcoding integration for Jellyfin.
+
+No AurealNix kernel patches or operating-system images are
+redistributed by this repository.
+
+Special thanks to Juan Manuel López Carrillo and the
+AurealNix contributors for their Orange Pi 4A work.
