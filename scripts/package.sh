@@ -48,6 +48,13 @@ install -m 755 \
   "$DEST/beta54/cedar-mux-ass-v5.4"
 
 echo
+install -m 755 \
+  "$ROOT/src/legacy/cedar-process-control.py" \
+  "$DEST/jellyfin-test/"
+
+python3 "$ROOT/scripts/relocate.py"
+
+echo
 echo "===== ARQUIVOS DA DISTRIBUICAO ====="
 find "$ROOT/dist" -type f | sort
 
