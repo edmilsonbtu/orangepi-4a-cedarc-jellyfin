@@ -54,6 +54,29 @@ def relocate_python(path):
         )
 
     result = "".join(lines)
+
+    if path.name in (
+        "cedar-process-control-v5.4.py",
+        "cedar-process-control.py",
+    ):
+        old = (
+            '(os.environ.get("CEDAR_ROOT", "/opt/cedar-native")'
+            " + '/venv/bin/python')"
+        )
+        new = (
+            'os.environ.get("CEDAR_PYTHON") or '
+            'os.path.join(os.environ.get('
+            '"CEDAR_ROOT", "/opt/cedar-native"), '
+            '"venv/bin/python")'
+        )
+
+        if old not in result:
+            raise RuntimeError(
+                f"Interpretador nao encontrado: {path}"
+            )
+
+        result = result.replace(old, new, 1)
+
     ast.parse(result, filename=str(path))
     path.write_text(result)
 
