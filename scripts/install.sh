@@ -77,7 +77,17 @@ fi
     exit 1
 }
 
-mkdir -p -- "$PREFIX"
+if [[ -L /opt || -L "$PREFIX" ]]; then
+    echo "ERRO: link simbolico no destino"
+    exit 1
+fi
+
+if [[ "$(realpath -e /opt)" != "/opt" ]]; then
+    echo "ERRO: /opt nao corresponde ao caminho esperado"
+    exit 1
+fi
+
+mkdir -- "$PREFIX"
 cp -a -- "$SOURCE/." "$PREFIX/"
 
 echo
@@ -86,4 +96,4 @@ find "$PREFIX" -type f | sort
 
 echo
 echo "ATENCAO: Jellyfin nao foi alterado."
-echo "Os caminhos absolutos do runtime ainda precisam ser adaptados."
+echo "Para executar a preview, configure CEDAR_ROOT e CEDAR_PYTHON."

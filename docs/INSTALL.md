@@ -33,13 +33,25 @@ Installation into a separate test prefix:
 The installer does not modify the Jellyfin service, FFmpeg
 configuration, or existing production installation.
 
+## Runtime configuration
+
+The distribution supports configurable runtime paths.
+
+Example:
+
+    export CEDAR_ROOT=/opt/cedar-native-preview
+    export CEDAR_PYTHON=/path/to/venv/bin/python
+
+The Python environment must provide PyAV 19.0.2.
+
+Vendor CedarC libraries, headers and the kernel driver
+must be installed separately.
+
 ## Limitations
 
-The current integration contains absolute paths pointing to
-/opt/cedar-native. Installing into a different prefix does not
-automatically make those scripts executable.
-
-The test installation is intended for file layout validation only.
-Runtime relocation and clean-install tests are still pending.
-
-Do not point a production Jellyfin service to the preview installation.
+- The preview installer does not configure Jellyfin.
+- The preview installer does not install Python or CedarC dependencies.
+- Runtime execution requires CEDAR_ROOT and CEDAR_PYTHON.
+- Clean-install hardware validation is still pending.
+- Only the reference hardware pipeline has been homologated.
+- Do not point a production Jellyfin service to the preview installation.
