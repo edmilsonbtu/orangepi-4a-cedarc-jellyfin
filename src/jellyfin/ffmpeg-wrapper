@@ -1,0 +1,3 @@
+#!/bin/bash
+exec /usr/bin/python3 \
+  /opt/cedar-native/v6.0/cedar-jellyfin-selector.py "$@"
